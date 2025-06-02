@@ -1,0 +1,10 @@
+.pageWrapper {
+    width: 100%;
+    padding: 125px 0px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .pageWrapper {
+      padding: 0;
+    }
+  }

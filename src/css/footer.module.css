@@ -1,0 +1,180 @@
+.footer{
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(87, 54, 10, 0.5);
+    display: flex;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer a{
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.1s ease;
+}
+.footer_wrap{
+    width: 100%;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+}
+/*左半邊區塊*/
+.wrap{
+    width: 30%;
+    margin-left: 18%;
+    display: flex;
+    flex-direction: column;
+    /* margin-right: auto; */
+}
+
+.top_icon{
+    display: flex;
+    font-size: 60px;
+    letter-spacing: 7px;
+    padding-bottom: 110px;
+}
+
+.footer_ul{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+/*中間聯絡資訊區塊*/
+.footer_menu{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    margin-left: 11%;
+    font-size: 20px;
+}
+
+.contactInfo{
+    padding: 15px 0 57px 0;
+}
+
+.contactInfo >p{
+    padding: 5px 0;
+}
+
+.footerComm > a{
+    padding-right: 20px;
+}
+
+/*右邊logo區塊*/
+.footer_logo{
+    width: 10%;
+    margin-left: 4%;
+    padding-top: 20px;
+}
+
+/**/
+.copyright{
+    width: 80%;
+    padding-bottom: 15px;
+}
+
+.copyright>p{
+    border-top: 2px solid #fff;
+    margin: 40px auto 0px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.icon{
+    padding-right: 6px;
+}
+
+.link:hover{
+    color: rgba(63, 39, 8, 0.788);
+}
+
+.footerComm >a:hover{
+    color: rgba(63, 39, 8, 0.788);
+}
+
+
+@media screen and (max-width: 1670px) {
+    .top_icon{
+
+    }
+    .wrap{
+        width: 40%;
+        margin-left: 15%;
+    }
+    .footer_menu{
+        width: 30%;
+        margin-left: 5%;
+    }
+    .footer_logo{
+        width: 5%;
+        margin-left: 0;
+    }
+}
+
+
+@media screen and (max-width: 1199px) {
+    .top_icon{
+    }
+    .wrap{
+        width: 47%;
+        margin-left: 12%;
+    }
+    .footer_menu{
+        width: 37%;
+        margin-left: 3%;
+    }
+    .footer_logo{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .footer_wrap{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .top_icon{
+        font-size: 50px;
+        padding-bottom: 0px;
+    }
+    .ul_wrap{
+        display: none;
+    }
+    .wrap{
+        width: 100%;
+        margin-left: 0%;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer_menu{
+        width: 100%;
+        margin-left: 0%;
+        align-items: center;
+    }
+    .contactInfo{
+        padding: 15px 0 25px 0;
+    }
+    .footer_logo{
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .top_icon{
+        font-size: 30px;
+    }
+
+    .contactInfo{
+        font-size: 18px;
+    }
+
+    .footerComm > a{
+        font-size: 18px;
+    }
+}

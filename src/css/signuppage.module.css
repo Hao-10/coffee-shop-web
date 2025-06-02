@@ -1,0 +1,79 @@
+.wrap{
+    background-image: url("../../public/img/loginpage5.jpg");
+    background-position: center center;
+    background-size: cover;
+    height: 800px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.title{
+    text-align: center;
+    width: 500px;
+    color: #6F4E37;
+    margin: 0 20px;
+    border-bottom: 2px solid #6F4E37;
+    width: 300px;
+    padding-bottom: 5px;
+}
+
+.signup_wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #F9F5F0;
+    border-radius: 10px;
+    height: 500px;
+    width: 100%;
+    max-width: 450px;
+    position: absolute;
+    bottom: 100px;
+}
+
+.signup_wrap img{
+    width: 150px;
+}
+
+.signup_wrap input{
+    padding: 10px 10px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #dbd2d2;
+}
+
+.signup_wrap p{
+    color: #6F4E37;
+    padding: 10px 0;
+}
+
+.signup{
+    background-color: #6F4E37;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    border: 1px solid #fff;
+    width: 100%;
+    cursor: pointer;
+}
+
+.authButtons{
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.formPrompt{
+    color: #6F4E37;
+  }
+
+  @media screen and (max-width: 768px) {
+    .signup_wrap{
+        width: 350px;
+    }
+}

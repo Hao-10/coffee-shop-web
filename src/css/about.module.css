@@ -1,0 +1,253 @@
+.title{
+    background-image: url("../../public/img/about4.jpg");
+    background-position: center center;
+    background-size: cover;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #ebe7e5;
+    z-index: 1;
+}
+.title::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+.title >h2{
+    font-size: 40px;
+    letter-spacing: 6px;
+}
+
+.title > h3{
+    font-size: 30px;
+    letter-spacing:2px;
+    line-height: 60px;
+}
+
+.processSection {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #fefefe;
+    color: #8b5e3c;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .subTitle {
+    font-size: 18px;
+    margin-bottom: 2rem;
+    color: #8b5e3c;
+  }
+  
+  .cardContainer {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 300px;
+    padding: 1.5rem;
+    text-align: center;
+    color: #8b5e3c;
+  }
+  
+  .card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    height: 168px;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
+  
+  .card h3 {
+    color: #6F4E37;
+    font-size: 20px;
+    margin-bottom: 0.5rem;
+  }
+
+  .member{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(87, 54, 10, 0.5);
+    color: #fff;
+    height: 650px;
+  }
+
+  .member > h2{
+    margin-bottom: 20px;
+    font-size: 45px;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid #fff;
+  }
+
+  .member_wrap{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .member_card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    margin: 60px;
+  }
+
+  .member_card img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 0.5rem;
+}
+
+.member_card > p {
+  margin: 10px 0;
+  font-size: 17px;
+}
+
+.missionSection {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  height: auto;
+  margin-top: 110px;
+  justify-content: center;
+  width: 100%;
+}
+
+.missionText {
+  color: #3e2a1d;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.missionText h2,
+.missionText h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #6f4e37;
+}
+
+.missionText p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  letter-spacing: 4px;
+}
+
+.vision_belief{
+  width: 40%;
+  margin-right: 80px;
+}
+
+.missionImage {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.missionImage img {
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+@media screen and (max-width: 1200px)
+ {
+  .processSection{
+    height: auto;
+  }
+  
+  .member{
+    height: auto;
+  }
+
+  .member > h2{
+    margin: 20px 0;
+    font-size: 40px;
+  }
+
+
+  .member_card{
+    width: 30%;
+  }
+
+  .member_card img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 0.5rem;
+}
+
+.member_card > p {
+  margin: 10px 0;
+  font-size: 17px;
+}
+}
+
+@media screen and (max-width: 991px) {
+  .missionText {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vision_belief{
+    width: 80%;
+    margin-right: 0px;
+    order: 2;
+    margin-bottom: 50px;
+  }
+  .missionImage {
+    width: 65%;
+  }
+  
+  .missionImage img {
+    margin-bottom: 50px;
+  }
+
+  .missionText h2, .missionText h3 {
+  text-align: center;
+}
+ .missionText p{
+  text-align: center;
+ }
+}
+
+@media screen and (max-width: 768px) {
+  .member_card{
+    width: 100%;
+    border-bottom: 1px solid #fff;
+  }
+  
+  .member_wrap{
+    gap: 0rem;
+  }
+}

@@ -1,0 +1,67 @@
+.carouselContainer{
+    position: relative;
+    width: 100%;
+}
+
+.centerText {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    z-index: 10;
+  }
+.centerText > h2{
+  font-size: 130px;
+  font-weight: bold;
+}
+
+.centerText > p{
+  font-size: 20px;
+  letter-spacing: 10px;
+}
+
+.carouselimage {
+    width: 100%;
+    height: 650px;
+    object-fit: cover;
+  }
+
+@media screen and (max-width: 768px) {
+  .mySwiper{
+    height: 300px;
+  }
+
+  .centerText {
+    top: 60%;
+    left: 50%;
+    padding: 10px 30px;
+  }
+
+  .centerText > h2{
+    font-size: 50px;
+    padding-bottom: 10px;
+  }
+  
+  .centerText > p{
+    font-size: 10px;
+    letter-spacing: 5px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+  }
+
+  .carouselimage{
+    height: auto;
+  }
+
+  .centerText  br{
+    display: none;
+  }
+
+  :global(.swiper-button-next::after),
+  :global(.swiper-button-prev::after) {
+    font-size: 20px;
+  }
+}

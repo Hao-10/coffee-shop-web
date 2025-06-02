@@ -1,0 +1,207 @@
+.nav {
+    width: 100%;
+    max-height: 125px;
+    padding: 10px 5vw;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 5px 5px -2px rgba(160, 155, 149, 0.6);
+    min-height: 125px;
+  }
+
+.imgwrap {
+  width: 18%;
+  display: flex;
+}
+
+.imgwrap a {
+  display: flex;
+  width: 100%;
+}
+
+.logo{
+  width: 100%;
+  height: auto;
+  max-width: 130px;
+  margin-left: auto;
+}
+
+.nav_ul {
+    width: 67%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav_ul > li {
+    margin-right: 20px;
+    list-style: none;
+    font-size: 20px;
+}
+
+.nav a:not(:has(img)){
+    color: rgba(87, 54, 10, 0.466);
+    font-weight: bold;
+    padding: 5px;
+    text-decoration: none;
+    background-color: #fff;
+    transition: color 0.3s ease;
+}
+
+.navlink:hover{
+    color: rgba(87, 54, 10, 0.9);
+}
+
+.navlink.active {
+    color: rgba(87, 54, 10, 0.9);
+  }
+
+:global(.active).navlink {
+    color: rgba(87, 54, 10, 0.9);
+}
+
+.iconwrap {
+    width: 15%;
+    display: flex;
+  }
+
+.usericon{
+    font-size: 20px;
+    color: rgba(131, 129, 126, 0.9);
+    margin-left: 100px;
+    position: relative;
+}
+
+.feature{
+    width: 200px;
+    position: absolute;
+    right: 12%;
+    bottom: -20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    padding: 10px 0px 10px 10px;
+    background-color: #fff;
+    cursor: 'pointer';
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.feature :global(a) {
+    font-size: 16px;
+  }
+
+  .signout{
+    font-size: 16px;
+    background-color: #fff;
+    cursor: pointer;
+    color: rgba(87, 54, 10, 0.466);
+    font-weight: bold;
+    padding: 4px;
+    border: none;
+}
+
+.signout_li{
+  display: none;
+}
+
+.signout:hover{
+  color: rgba(87, 54, 10, 0.9);
+}
+
+.hamburger_btn{
+    display: none;
+}
+
+/*-----------------------------------------------------------------------*/
+@media screen and (max-width: 991px) {
+
+  .imgwrap {
+    width: 17%;
+  }
+
+  .nav_ul {
+    width: 68%;
+  }
+  .nav_ul > li {
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    flex-direction: row;
+    justify-content: flex-start; /* logo靠左 */
+    align-items: center;
+    position: relative;
+  }
+
+  .imgwrap {
+    width: auto;
+    margin: 0;
+  }
+
+  .hamburger_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 5vw;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .hamburger_icon{
+    color: rgba(87, 54, 10, 0.9);
+  }
+
+  .hamburger_btn > button {
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .nav_ul {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 100%; /* 放在 nav 下方 */
+    left: 0;
+    z-index: 999;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+
+  .nav_ul_off {
+    display: none;
+  }
+
+  .nav_ul > li {
+    margin: 10px 0;
+    font-size: 20px;
+  }
+
+  .iconwrap {
+    display: none;
+  }
+
+  .signout_li{
+    display: flex;
+  }
+  .signout_li >button{
+    font-size: 20px;
+    background-color: #fff;
+    cursor: pointer;
+    color: rgba(87, 54, 10, 0.466);
+    font-weight: bold;
+    padding: 4px;
+    border: none;
+  }
+}
