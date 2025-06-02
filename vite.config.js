@@ -9,8 +9,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        // 這裡新增一份 404.html，內容會跟 index.html 一樣
-        fallback: resolve(__dirname, 'index.html'),
+        // 注意這裡名字隨意，只要有輸出這個檔案就行
+        '404': resolve(__dirname, '404.html'),
       },
     },
   },
