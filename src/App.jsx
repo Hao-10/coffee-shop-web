@@ -13,7 +13,7 @@ import AboutPage from "./pages/AboutPage";
 function App() {
 
   return (
-      <Router>
+      <Router basename="/coffee-shop-web">
         <AuthProvider>
           <Routes>
             <Route path="/" element={<HomePage />} />
