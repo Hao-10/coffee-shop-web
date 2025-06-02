@@ -189,7 +189,7 @@ function MyCart() {
             </tr>
           ) : (
             cartItems.map((item) => (
-              <tr key={item.id}>
+              <tr className={styles.product_tr} key={item.id}>
                 <td>
                   <div className={styles.prodname}>
                     <img src={imgPath(item.img)} alt={item.name} />

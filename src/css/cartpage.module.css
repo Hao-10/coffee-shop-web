@@ -175,4 +175,10 @@ tfoot tr td{
     font-size: 18px;
     margin-top: 10px;
   }
+
+  .product_tr{
+    border: 1px solid #6F4E37;
+    margin-bottom: 30px;
+    border-radius: 10px;
+  }
 }
