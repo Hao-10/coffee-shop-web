@@ -4,6 +4,7 @@ import Layout from '../components/Layout';
 import { Link } from "react-router-dom";
 import { useAuth } from "../store/AuthContext";
 import styles from "../css/loginpage.module.css"
+import { imgPath } from '../utils/imgPath';
 
 export default function LoginPage() {
   const {handleLogin, setEmail,setPassword,email,password,handleClearInputs} =useAuth();
@@ -13,7 +14,7 @@ export default function LoginPage() {
       <Navbar/>
       <div className={styles.wrap}>
         <div className={styles.login_wrap}>
-          <img src="../../public/img/logo1.png" alt="logo" />
+          <img src={imgPath("logo1.png")} alt="logo" />
           <h2 className={styles.title}>登入</h2>
           <div>
             <p>電子郵件</p>

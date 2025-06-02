@@ -1,6 +1,7 @@
 import styles from "../css/about.module.css";
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { imgPath } from "../utils/imgPath";
 
 function About() {
     const { ref: ref1, inView: inView1 } = useInView({ triggerOnce: true, threshold: 0.2 });
@@ -123,17 +124,17 @@ function About() {
                 <p className={styles.subTitle}>從豆子到杯中，每一步都是我們的堅持</p>
                 <motion.div className={styles.cardContainer}>
                     <motion.div className={styles.card} variants={cardVariants}>
-                    <img src="/img/about-coffee5.jpg" alt="挑選咖啡豆" />
+                    <img src={imgPath("about-coffee5.jpg")} alt="挑選咖啡豆" />
                     <h3>咖啡豆的挑選</h3>
                     <p>與南投與阿里山小農合作，親自杯測篩選最適風味的高品質豆。</p>
                     </motion.div>
                     <motion.div className={styles.card} variants={cardVariants}>
-                    <img src="/img/about-coffee9.jpg" alt="手工烘焙" />
+                    <img src={imgPath("about-coffee9.jpg")} alt="手工烘焙" />
                     <h3>手工烘焙工藝</h3>
                     <p>以小批量中淺焙，保留豆子的花果香與乾淨口感。</p>
                     </motion.div>
                     <motion.div className={styles.card} variants={cardVariants}>
-                    <img src="/img/about-coffee8.jpg" alt="手作咖啡與甜點" />
+                    <img src={imgPath("about-coffee8.jpg")} alt="手作咖啡與甜點" />
                     <h3>飲品與甜點</h3>
                     <p>堅持每日手作現做，傳遞細膩溫度與自然風味。</p>
                     </motion.div>
@@ -151,21 +152,21 @@ function About() {
                 <motion.div className={styles.member_wrap} variants={memberContainerVariants}>
                     <motion.div className={styles.member_card} variants={cardVariants}>
                     <motion.div variants={memberImageVariants}>
-                        <img src="/img/member1.jpg" alt="布魯斯" />
+                        <img  src={imgPath("member1.jpg")} alt="布魯斯" />
                     </motion.div>
                     <motion.p variants={memberTextVariants}>布魯斯</motion.p>
                     <motion.p variants={memberTextVariants}>店長 Cafe Manager</motion.p>
                     </motion.div>
                     <motion.div className={styles.member_card} variants={cardVariants}>
                     <motion.div variants={memberImageVariants}>
-                        <img src="/img/member3.jpg" alt="海莉" />
+                        <img  src={imgPath("member3.jpg")} alt="海莉" />
                     </motion.div>
                     <motion.p variants={memberTextVariants}>海莉</motion.p>
                     <motion.p variants={memberTextVariants}>總廚 Head Barista</motion.p>
                     </motion.div>
                     <motion.div className={styles.member_card} variants={cardVariants}>
                     <motion.div variants={memberImageVariants}>
-                        <img src="/img/member2.jpg" alt="詹姆斯" />
+                        <img src={imgPath("member2.jpg")}  alt="詹姆斯" />
                     </motion.div>
                     <motion.p variants={memberTextVariants}>詹姆斯</motion.p>
                     <motion.p variants={memberTextVariants}>營運總監 Operations Director</motion.p>
@@ -201,7 +202,7 @@ function About() {
                     </motion.div>
 
                     <div className={styles.missionImage}>
-                    <img src="/img/about-mission.jpg" alt="mission" />
+                    <img src={imgPath("about-mission.jpg")} alt="mission" />
                     </div>
                 </div>
             </motion.div>

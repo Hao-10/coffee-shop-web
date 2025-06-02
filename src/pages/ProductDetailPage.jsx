@@ -9,6 +9,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
 import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
+import { imgPath } from "../utils/imgPath";
 
 function ProductDetailPage() {
     const { id } = useParams(); // 獲取 category 和 id
@@ -125,7 +126,7 @@ function ProductDetailPage() {
             <div className={styles.wrap} style={{ padding: '130px 0px' }}>
                 <div className={styles.prodDetail_wrap}>
                   <div className={styles.product_img_wrap}>
-                  <img src={product.img} alt={product.name} />
+                  <img src={imgPath(product.img)} alt={product.name} />
                   </div>
                   <div className={styles.prodDetail}>
                       <h1>商品類別：{product.type}</h1>

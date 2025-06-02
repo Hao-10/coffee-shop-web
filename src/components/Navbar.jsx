@@ -7,6 +7,7 @@ import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useState, useRef, useEffect } from "react";
 import { useAuth } from "../store/AuthContext";
 import { auth } from "../firebase";
+import { imgPath } from "../utils/imgPath";
 
 
 function Navbar() {
@@ -47,7 +48,7 @@ function Navbar() {
 
                 <div className={styles.imgwrap}>
                     <Link to="/">
-                        <img src={'/img/logo1.png'} className={styles.logo} alt='logo'/>
+                        <img src={imgPath("logo1.png")} className={styles.logo} alt='logo'/>
                     </Link>
                 </div>
 

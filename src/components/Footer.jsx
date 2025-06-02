@@ -7,6 +7,7 @@ import { faFacebook,faInstagram,faXTwitter } from '@fortawesome/free-brands-svg-
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useLocation } from "react-router-dom";
+import { imgPath } from "../utils/imgPath";
 
 function Footer() {
     const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
@@ -44,7 +45,7 @@ function Footer() {
                     </div>
                 </div>
                 <div className={styles.footer_logo}>
-                        <img src={'/img/logo1.png'} alt='logo' style={{ width: "130px", height: "100px" ,margin: "20px 80px 0px 0px"}}/>
+                        <img src={imgPath("logo1.png")} alt='logo' style={{ width: "130px", height: "100px" ,margin: "20px 80px 0px 0px"}}/>
                 </div>
             </div>
             <div className={styles.copyright}>

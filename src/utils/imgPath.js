@@ -1,0 +1,1 @@
+export const imgPath = (file) => `${import.meta.env.BASE_URL}img/${file}`;

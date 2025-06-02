@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import { useAuth } from "../store/AuthContext";
 // import { setProducts } from "../redux/cartSlice";
 import { useState } from "react";
+import { imgPath } from "../utils/imgPath";
 
 function MyCart() {
   const dispatch = useDispatch();
@@ -191,7 +192,7 @@ function MyCart() {
               <tr key={item.id}>
                 <td>
                   <div className={styles.prodname}>
-                    <img src={item.img} alt={item.name} />
+                    <img src={imgPath(item.img)} alt={item.name} />
                     <p>{item.name}</p>
                   </div>
                 </td>

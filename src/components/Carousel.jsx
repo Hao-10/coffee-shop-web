@@ -5,13 +5,14 @@ import "swiper/css/navigation";
 import { Navigation, Autoplay } from "swiper/modules";
 import styles from "../css/carousel.module.css";
 import { motion } from "framer-motion";
+import { imgPath } from "../utils/imgPath";
 
 const Carousel = () => {
   const images = [
-    "/img/swiperslide1.jpg",
-    "/img/swiperslide2.jpg",
-    "/img/swiperslide3.jpg",
-    "/img/swiperslide4.jpg",
+    "swiperslide1.jpg",
+    "swiperslide2.jpg",
+    "swiperslide3.jpg",
+    "swiperslide4.jpg",
   ];
 
   return (
@@ -29,7 +30,7 @@ const Carousel = () => {
       >
         {images.map((img, index) => (
           <SwiperSlide key={index}>
-            <motion.img src={img} alt={`slide-${index}`} className={styles.carouselimage} initial={{ scale: 1.1, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.9, opacity: 0 }} transition={{ duration: 0.8 }} />
+            <motion.img src={imgPath(img)} alt={`slide-${index}`} className={styles.carouselimage} initial={{ scale: 1.1, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.9, opacity: 0 }} transition={{ duration: 0.8 }} />
           </SwiperSlide>
         ))}
       </Swiper>

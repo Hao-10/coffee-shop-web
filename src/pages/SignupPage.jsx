@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import styles from "../css/signuppage.module.css"
 import { Link } from "react-router-dom";
 import { useAuth } from "../store/AuthContext";
+import { imgPath } from "../utils/imgPath";
 
 
 export default function SignupPage() {
@@ -12,7 +13,7 @@ export default function SignupPage() {
     <Navbar/>
     <div className={styles.wrap} style={{ paddingTop: '150px' }}>
       <div className={styles.signup_wrap}>
-        <img src="../../public/img/logo1.png" alt="logo" />
+        <img src={imgPath("logo1.png")} alt="logo" />
         <h2 className={styles.title}>註冊</h2>
         <div>
           <p>電子郵件</p>

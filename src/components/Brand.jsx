@@ -5,6 +5,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { imgPath } from "../utils/imgPath";
 
 function Brand() {
     const [brandcreation,setBrandcreation] = useState(null);
@@ -47,7 +48,7 @@ function Brand() {
     return(
         <div className={styles.brand}>
             <motion.div ref={ref1} initial={{ opacity: 0, y: 50 }} animate={inView1 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }} className={styles.brandcreation}>
-                <img src={brandcreation.img} alt="" className={styles.brandimage} />
+                <img src={imgPath(brandcreation.img)} alt="" className={styles.brandimage} />
                 <div className={styles.h1_p}>
                     <h1>{brandcreation.title}</h1>
                     <p>{brandcreation.firstContent}</p>
@@ -60,7 +61,7 @@ function Brand() {
                     <p>{brandpt.firstContent}</p>
                     <p>{brandpt.secondContent}</p>
                 </div>
-                <img src={brandpt.img} alt="" className={styles.brandimage} />
+                <img src={imgPath(brandpt.img)} alt="" className={styles.brandimage} />
             </motion.div>
         </div>
     )
