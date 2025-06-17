@@ -12,7 +12,7 @@ import { imgPath } from "../utils/imgPath";
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
-    const [navToggle,setNavToggle] =useState(false); //導覽烈開關判斷
+    const [navToggle,setNavToggle] =useState(false); //導覽列開關判斷
     const closeTimer = useRef(null);
     const {handleSignout}= useAuth();
 
@@ -60,7 +60,7 @@ function Navbar() {
                     <li><NavLink className={styles.navlink} to="/cart">購物車</NavLink></li>
                     <li><NavLink className={styles.navlink} to="/about">關於我們</NavLink></li>
                     <li><NavLink className={styles.navlink} to="/contact">聯絡我們</NavLink></li>
-                    {navToggle ? (
+                    {auth.currentUser ? (
                     <li className={styles.signout_li}><button onClick={handleSignout} >登出</button></li>
                     ) : (
                     <li><NavLink className={styles.navlink} to="/login">登入</NavLink></li>
