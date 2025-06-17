@@ -216,9 +216,6 @@
   }
 
   @media (max-width: 768px) {
-    .prodtype{
-      width: 100%;
-  }
   
   .type_ul{
       display: flex;
@@ -263,4 +260,14 @@
   .cardboder:hover .card_overlay {
     opacity: 0;
   }
+}
+
+@media (max-width: 414px) {
+  .type_ul > li > a {
+    text-decoration: none;
+    padding: 5px 20px;
+    color: rgba(87, 54, 10, 0.9);
+    font-weight: bold;
+    position: relative;
+}
 }
