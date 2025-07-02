@@ -23,7 +23,7 @@ export default function LoginPage() {
             <input placeholder="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
           </div>
           <div className={styles.authButtons}>
-            <Link to="/signup" style={{textDecoration:"none"}}><button className={styles.signup}>註冊</button></Link>
+            <Link to="/signup" style={{textDecoration:"none"}} onClick={handleClearInputs}><button className={styles.signup}>註冊</button></Link>
             <button onClick={handleLogin} className={styles.login}>登入</button>
           </div>
           <div>

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { clearCart } from "../redux/cartSlice";
 import { doc,getDoc,setDoc } from "firebase/firestore";
+import Swal from "sweetalert2";
 
 export const AuthContext = createContext()
 
@@ -19,7 +20,7 @@ export const AuthProvider = ({children}) => {
   const handleLogin = async () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      alert("登入成功！");
+      Swal.fire("✅ 登入成功", "歡迎回來！", "success");
       setEmail("");
       setPassword("");
       navigate("/cart");
@@ -41,7 +42,7 @@ export const AuthProvider = ({children}) => {
         default:
           message = "登入失敗：" + err.message;
       }
-      alert(message);
+      Swal.fire("❌ 登入失敗", message, "error");
     }
   };
 
@@ -55,7 +56,7 @@ export const AuthProvider = ({children}) => {
         dispatch(clearCart());
         localStorage.removeItem("cartItems");
         localStorage.removeItem("cartTotal")
-        alert("已成功登出！");
+        Swal.fire("✅ 登出成功", "期待您再次光臨！", "success");
         navigate("/"); // 導向登入頁面
       })
       .catch((error) => {
@@ -78,7 +79,7 @@ export const AuthProvider = ({children}) => {
         // console.log("建立購物車 user uid:", user.uid);
       }
   
-      alert("註冊成功！");
+      Swal.fire("✅ 註冊成功", "歡迎加入我們的會員！", "success");
       setEmail("");
       setPassword("");
       navigate("/login");
@@ -104,7 +105,7 @@ export const AuthProvider = ({children}) => {
         default:
           message = "註冊失敗：" + err.message;
       }
-      alert(message);
+      Swal.fire("❌ 註冊失敗", message, "error");
     }
   };
 

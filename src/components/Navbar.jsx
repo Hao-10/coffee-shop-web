@@ -13,6 +13,7 @@ import { imgPath } from "../utils/imgPath";
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [navToggle,setNavToggle] =useState(false); //導覽列開關判斷
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
     const closeTimer = useRef(null);
     const {handleSignout}= useAuth();
 
@@ -29,11 +30,8 @@ function Navbar() {
 
       useEffect(() => {
         const handleResize = () => {
-          if (window.innerWidth > 768) {
-            setNavToggle(true);  // 電腦版顯示選單
-          } else {
-            setNavToggle(false); // 行動版預設關閉選單
-          }
+          setIsMobile(window.innerWidth < 768);
+          setNavToggle(window.innerWidth > 768);
         };
       
         handleResize(); // 初始執行一次
@@ -60,11 +58,11 @@ function Navbar() {
                     <li><NavLink className={styles.navlink} to="/cart">購物車</NavLink></li>
                     <li><NavLink className={styles.navlink} to="/about">關於我們</NavLink></li>
                     <li><NavLink className={styles.navlink} to="/contact">聯絡我們</NavLink></li>
-                    {auth.currentUser ? (
+                    {isMobile && (auth.currentUser ? (
                     <li className={styles.signout_li}><button onClick={handleSignout} >登出</button></li>
                     ) : (
                     <li><NavLink className={styles.navlink} to="/login">登入</NavLink></li>
-                    )}
+                    ))}
                 </ul>
                 
                 <div className={styles.iconwrap}>

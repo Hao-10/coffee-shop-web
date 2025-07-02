@@ -10,6 +10,7 @@ import { addToCart } from "../redux/cartSlice";
 import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
 import { imgPath } from "../utils/imgPath";
+import Swal from "sweetalert2";
 
 function ProductDetailPage() {
     const { id } = useParams(); // 獲取 category 和 id
@@ -32,12 +33,19 @@ function ProductDetailPage() {
 
     const handleAddToCart = async (quantity,stk) => {
         if (!auth.currentUser) {
-          alert("請先登入才能加入商品至購物車！");
+          await Swal.fire({
+            icon: "warning",
+            title: "請先登入才能加入購物車！",
+            confirmButtonText: "前往登入",
+          });
           navigate("/login");
           return;
         }
         if(stk<=0){
-          alert("該商品已完售！");
+          await Swal.fire({
+            icon: "info",
+            title: "該商品已完售！",
+          });
           return;
         }
         // Redux 加入購物車
@@ -84,14 +92,30 @@ function ProductDetailPage() {
               updatedItems = [...existingItems, newItem];
             }
             await updateDoc(cartRef, { items: updatedItems });
-            alert("已加入購物車！");
-            navigate("/cart");
-          } else {
-            console.error("找不到購物車文件！");
-          }
+
+            const result=await Swal.fire({
+              icon: "success",
+              title: "✅ 已加入商品至購物車！",
+              text: "要前往購物車嗎？",
+              confirmButtonText: "前往購物車",
+              showCancelButton: true,
+              cancelButtonText: "繼續購物"
+            });
+            if (result.isConfirmed) {
+              navigate("/cart");
+            } else if (result.isDismissed) {
+              navigate("/product");
+            }
+            } else {
+              console.error("找不到購物車文件！");
+            }
         } catch (error) {
           console.error("儲存到 Firestore 失敗：", error);
-          alert("加入購物車時發生錯誤！");
+          await Swal.fire({
+            icon: "error",
+            title: "加入購物車失敗",
+            text: error.message
+          });
         }
       };
 

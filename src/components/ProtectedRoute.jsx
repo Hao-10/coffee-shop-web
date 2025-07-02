@@ -6,7 +6,7 @@ export default function ProtectedRoute({ children }) {
 
   // 等待 Firebase 初始化驗證狀態
   if (loading) {
-    return <div>載入中...</div>; // 你可以改為 spinner 元件
+    return <div>載入中...</div>;
   }
 
   // 若未登入，導向登入頁面

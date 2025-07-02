@@ -78,8 +78,6 @@ const cartSlice = createSlice({
 
       localStorage.removeItem("cartItems");
       localStorage.removeItem("cartTotal");
-      // console.log(state.totalAmount);
-      // console.log(state.items);
     },
   },
 });
