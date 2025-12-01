@@ -232,7 +232,7 @@ function MyCart() {
                 清空購物車
               </button>
             </td>
-            <td colSpan="2"></td>
+            <td className={styles.cart_td} colSpan="2"></td>
             <td>
               <h3>總金額: NT${totalAmount}</h3>
             </td>

@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams,Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { doc, getDoc, updateDoc, arrayUnion, setDoc } from "firebase/firestore";
 import { db } from "../firebase";
@@ -11,6 +11,8 @@ import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
 import { imgPath } from "../utils/imgPath";
 import Swal from "sweetalert2";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 
 function ProductDetailPage() {
     const { id } = useParams(); // 獲取 category 和 id
@@ -147,10 +149,13 @@ function ProductDetailPage() {
     return (
         <>
             <Navbar />
-            <div className={styles.wrap} style={{ padding: '130px 0px' }}>
+            <div className={styles.wrap}>
                 <div className={styles.prodDetail_wrap}>
                   <div className={styles.product_img_wrap}>
-                  <img src={imgPath(product.img)} alt={product.name} />
+                    <div className={styles.back_product}>
+                      <Link to={`/product/${product.type}`}><FontAwesomeIcon icon={faArrowLeftLong} className={styles.backicon}/>返回商品頁</Link>
+                    </div>
+                    <img src={imgPath(product.img)} alt={product.name} />
                   </div>
                   <div className={styles.prodDetail}>
                       <h1>商品類別：{product.type}</h1>
